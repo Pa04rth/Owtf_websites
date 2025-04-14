@@ -9,14 +9,16 @@ const inter = Inter({
 });
 export default function Masthead() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-black border-t-2 border-white">
+    <div className="flex flex-col items-center justify-center h-screen bg-black border-t-2 border-zinc-500">
       <div className="flex flex-col items-center justify-center -mt-20">
         {" "}
         {/* Added -mt-20 */}
         <Image
-          src="../assets/OWASP-Logo.png"
+          src="/assets/OWASP-Logo.png"
           alt="Logo"
-          className="w-60 h-60 rounded-full"
+          width={240} // Specify the width
+          height={240} // Specify the height
+          className=" w-60 h-60 rounded-full"
         />
         <br />
         <h1
@@ -39,12 +41,14 @@ export default function Masthead() {
       </div>
       <div className="flex items-center space-x-4 mt-8">
         {/* Command Box */}
-        <div className="flex items-center justify-center bg-[rgba(255,255,255,0.1)] rounded px-4 py-2 text-white text-xl font-mono h-16 w-70">
-          <span>$ npm i owtf@2.6</span>
+        <div className="flex items-center justify-center bg-[rgba(255,255,255,0.1)] rounded px-4 py-2 text-white text-xl font-mono h-16 w-145">
+          <span>$ git clone https://github.com/owtf/owtf.git</span>
           <button
             className="ml-4 bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] px-2 py-1 rounded text-xs"
             onClick={() => {
-              navigator.clipboard.writeText("npm i owtf@2.6");
+              navigator.clipboard.writeText(
+                "git clone https://github.com/owtf/owtf.git"
+              );
               alert("Copied to clipboard!");
             }}
           >

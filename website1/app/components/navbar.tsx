@@ -43,8 +43,10 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="../assets/logo.png"
+              src="/assets/logo.png"
               alt="Website Logo"
+              width={40} // Matches w-10 (40px)
+              height={40} // Matches h-10 (40px)
               className="h-10 w-10"
             />
           </Link>
@@ -126,8 +128,10 @@ export default function Navbar() {
                 <div className="flex items-center  px-1 py-0.5 rounded bg-white text-[10px]">
                   <span className="mr-0.5">
                     <Image
-                      src="../assets/store.svg"
+                      src="/assets/store.svg"
                       alt="Store"
+                      width={16} // Matches w-4 (16px)
+                      height={16} // Matches h-4 (16px)
                       className="h-4 w-4"
                     />
                   </span>
@@ -139,8 +143,10 @@ export default function Navbar() {
               <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-2 py-1 h-8 w-23">
                 <div className="flex items-center justify-center px-1 py-0.5 rounded bg-white text-[10px]">
                   <Image
-                    src="../assets/join.svg"
+                    src="/assets/join.svg"
                     alt="Join"
+                    width={16} // Matches w-4 (16px)
+                    height={16} // Matches h-4 (16px)
                     className="h-4 w-4 "
                   />
                 </div>
@@ -150,6 +156,7 @@ export default function Navbar() {
             <a
               href="https://github.com/owtf/owtf"
               className="hover:bg-[rgba(255,255,255,0.2)] p-1.5 rounded-full"
+              title="Visit OWTF GitHub Repository"
             >
               <Github size={18} />
             </a>
