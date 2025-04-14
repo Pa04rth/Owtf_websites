@@ -1,17 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import {
-  Search,
-  HelpCircle,
-  Twitter,
-  Sun,
-  Moon,
-  ChevronDown,
-  Menu,
-  Github,
-  X,
-} from "lucide-react";
+import { Search, Sun, Moon, ChevronDown, Menu, Github, X } from "lucide-react";
+import Image from "next/image";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,14 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
-import { Kbd } from "@/app/components/ui/kbd";
+// import { Kbd } from "@/app/components/ui/kbd";
 import { SearchCommand } from "@/app/components/search-command";
-
-import { Oxanium } from "next/font/google";
-const oxanium = Oxanium({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export default function Navbar() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -53,11 +38,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-[#111111] ${oxanium.className} text-white h-16 px-20 flex items-center  shadow-md">
+      <nav className="bg-[#111111]  text-white h-16 px-20 flex items-center  shadow-md">
         {/* Left Section - Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="../assets/logo.png"
               alt="Website Logo"
               className="h-10 w-10"
@@ -140,7 +125,7 @@ export default function Navbar() {
               <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-1 py-1 h-8 w-23">
                 <div className="flex items-center  px-1 py-0.5 rounded bg-white text-[10px]">
                   <span className="mr-0.5">
-                    <img
+                    <Image
                       src="../assets/store.svg"
                       alt="Store"
                       className="h-4 w-4"
@@ -153,7 +138,7 @@ export default function Navbar() {
             <a href="https://owasp.glueup.com/">
               <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-2 py-1 h-8 w-23">
                 <div className="flex items-center justify-center px-1 py-0.5 rounded bg-white text-[10px]">
-                  <img
+                  <Image
                     src="../assets/join.svg"
                     alt="Join"
                     className="h-4 w-4 "

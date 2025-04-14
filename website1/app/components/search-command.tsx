@@ -25,7 +25,7 @@ interface SearchCommandProps {
 
 export function SearchCommand({ open, onOpenChange }: SearchCommandProps) {
   const [query, setQuery] = useState("");
-  const [_, navigate] = useLocation();
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     if (!open) {

@@ -1,5 +1,7 @@
 "use client";
 import { Inter } from "next/font/google";
+import Image from "next/image";
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "900"],
@@ -11,7 +13,7 @@ export default function Masthead() {
       <div className="flex flex-col items-center justify-center -mt-20">
         {" "}
         {/* Added -mt-20 */}
-        <img
+        <Image
           src="../assets/OWASP-Logo.png"
           alt="Logo"
           className="w-60 h-60 rounded-full"

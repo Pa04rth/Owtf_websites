@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/app/components/navbar";
 import Masthead from "@/app/components/Masthead";
 
