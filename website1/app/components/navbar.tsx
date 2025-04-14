@@ -22,6 +22,12 @@ import {
 import { Kbd } from "@/app/components/ui/kbd";
 import { SearchCommand } from "@/app/components/search-command";
 
+import { Oxanium } from "next/font/google";
+const oxanium = Oxanium({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export default function Navbar() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -47,7 +53,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-[#111111] text-white h-16 px-20 flex items-center justify-between shadow-md">
+      <nav className="bg-[#111111] ${oxanium.className} text-white h-16 px-20 flex items-center  shadow-md">
         {/* Left Section - Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
@@ -68,80 +74,115 @@ export default function Navbar() {
         </div>
 
         {/* Middle Section - Navigation Links */}
-        <div className="hidden md:flex items-center space-x-1">
+        <div className="hidden md:flex ml-2 space-x-1">
           <Link
             href="/docs"
-            className="font-medium hover:bg-[#5dd62c] px-2 py-1 rounded"
+            className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
           >
-            Docs
+            Projects
           </Link>
           <Link
             href="/examples"
-            className="font-medium hover:bg-[#5dd62c] px-2 py-1 rounded"
+            className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
           >
-            Examples
+            Chapter
           </Link>
           <Link
             href="/icons"
-            className="font-medium hover:bg-[#5dd62c] px-2 py-1 rounded"
+            className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
           >
-            Icons
+            Events
           </Link>
           <Link
             href="/themes"
-            className="font-medium hover:bg-[#5dd62c] px-2 py-1 rounded"
+            className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
           >
-            Themes
+            About
           </Link>
           <Link
             href="/blog"
-            className="font-medium hover:bg-[#5dd62c] px-2 py-1 rounded"
+            className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
           >
-            Blog
+            Download
           </Link>
         </div>
 
         {/* Right Section - Search and Utilities */}
-        <div className="flex items-center ">
+        <div className="flex items-center ml-auto space-x-2">
           {/* Search Box */}
           <div className="relative hidden md:block">
             <button
-              className="flex items-center bg-[rgba(255,255,255,0.15)] rounded px-3 py-1"
+              className="flex items-center bg-[rgba(255,255,255,0.15)] rounded px-3 py-1 h-8 w-50"
               onClick={() => setIsSearchOpen(true)}
             >
               <Search className="h-4 w-4 mr-2 opacity-70" />
-              <span className="text-sm opacity-70">Search</span>
-              <div className="flex items-center justify-center ml-2 px-1 py-0.5 rounded bg-[rgba(255,255,255,0.2)] text-[10px]">
+              <span className="items-end justify-end text-sm opacity-70">
+                Search
+              </span>
+              <div className="flex items-center  ml-auto px-1 py-0.5 rounded bg-[rgba(255,255,255,0.2)] text-[10px]">
                 <span className="mr-0.5">⌘</span>
-                <span>K</span>
+                <span>+ K</span>
               </div>
             </button>
           </div>
 
           {/* Utility Icons */}
-          <a href="#" className="hover:bg-[#9A6FF4] p-1.5 rounded-full">
-            <HelpCircle size={18} />
-          </a>
-          <a href="#" className="hover:bg-[#9A6FF4] p-1.5 rounded-full">
-            <img src="../assets/x.svg" alt="x" className="h-4 w-4" />
-          </a>
-          <a href="#" className="hover:bg-[#9A6FF4] p-1.5 rounded-full">
-            <Github size={18} />
-          </a>
+          <div className="flex items-end justify-end space-x-2 ">
+            <a href="https://owasp.org/donate?reponame=www-project-owtf&title=OWASP+OWTF ">
+              <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-1 py-1 h-8 w-25">
+                <div className="flex items-center  px-1 py-0.5 rounded bg-white text-[10px]">
+                  <span className="mr-0.5">❤️</span>
+                </div>
+                <span className="ml-2 text-sm opacity-70">Donate</span>
+              </button>
+            </a>
+            <a href="https://www.zazzle.com/store/owasp_foundation/products ">
+              <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-1 py-1 h-8 w-23">
+                <div className="flex items-center  px-1 py-0.5 rounded bg-white text-[10px]">
+                  <span className="mr-0.5">
+                    <img
+                      src="../assets/store.svg"
+                      alt="Store"
+                      className="h-4 w-4"
+                    />
+                  </span>
+                </div>
+                <span className="ml-2 text-sm opacity-70">Store</span>
+              </button>
+            </a>
+            <a href="https://owasp.glueup.com/">
+              <button className="flex items-center justify-center bg-[rgba(255,255,255,0.15)] rounded px-2 py-1 h-8 w-23">
+                <div className="flex items-center justify-center px-1 py-0.5 rounded bg-white text-[10px]">
+                  <img
+                    src="../assets/join.svg"
+                    alt="Join"
+                    className="h-4 w-4 "
+                  />
+                </div>
+                <span className="ml-2 text-sm opacity-70">Join</span>
+              </button>
+            </a>
+            <a
+              href="https://github.com/owtf/owtf"
+              className="hover:bg-[rgba(255,255,255,0.2)] p-1.5 rounded-full"
+            >
+              <Github size={18} />
+            </a>
+          </div>
 
           {/* Version Dropdown */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center hover:bg-[#9A6FF4] px-2 py-1 rounded">
-              <span className="text-sm mr-1">v5.3</span>
+            <DropdownMenuTrigger className="flex items-center hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded">
+              <span className="text-sm mr-1">v 2.6</span>
               <ChevronDown size={14} />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40">
               <DropdownMenuItem className="text-sm">
-                v5.3 (current)
+                v 2.6 (current)
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">v5.2</DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">v5.1</DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">v5.0</DropdownMenuItem>
+              <DropdownMenuItem className="text-sm">v 2.5</DropdownMenuItem>
+              <DropdownMenuItem className="text-sm">v 2.4</DropdownMenuItem>
+              <DropdownMenuItem className="text-sm">Bugsquash</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="text-sm">
                 All versions
@@ -151,7 +192,7 @@ export default function Navbar() {
 
           {/* Theme Toggle Button */}
           <button
-            className="hover:bg-[#9A6FF4] p-1.5 rounded-full"
+            className="hover:bg-[rgba(255,255,255,0.2)] p-1.5 rounded-full"
             onClick={toggleTheme}
           >
             {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
@@ -161,35 +202,35 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#8954F3] text-white p-4 shadow-md">
+        <div className="md:hidden bg-[rgba(255,255,255,0.2)] text-white p-4 shadow-md">
           <div className="flex flex-col space-y-3">
             <Link
               href="/docs"
-              className="font-medium hover:bg-[#9A6FF4] px-2 py-1 rounded"
+              className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
             >
               Docs
             </Link>
             <Link
               href="/examples"
-              className="font-medium hover:bg-[#9A6FF4] px-2 py-1 rounded"
+              className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
             >
               Examples
             </Link>
             <Link
               href="/icons"
-              className="font-medium hover:bg-[#9A6FF4] px-2 py-1 rounded"
+              className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
             >
               Icons
             </Link>
             <Link
               href="/themes"
-              className="font-medium hover:bg-[#9A6FF4] px-2 py-1 rounded"
+              className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
             >
               Themes
             </Link>
             <Link
               href="/blog"
-              className="font-medium hover:bg-[#9A6FF4] px-2 py-1 rounded"
+              className="font-medium hover:bg-[rgba(255,255,255,0.2)] px-2 py-1 rounded"
             >
               Blog
             </Link>
