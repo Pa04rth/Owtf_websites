@@ -16,7 +16,7 @@ import {
   PaletteIcon,
   NewspaperIcon,
 } from "lucide-react";
-import { useLocation } from "wouter";
+import { useRouter } from "next/navigation";
 
 interface SearchCommandProps {
   open: boolean;
@@ -25,7 +25,7 @@ interface SearchCommandProps {
 
 export function SearchCommand({ open, onOpenChange }: SearchCommandProps) {
   const [query, setQuery] = useState("");
-  const [, navigate] = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     if (!open) {
@@ -33,9 +33,9 @@ export function SearchCommand({ open, onOpenChange }: SearchCommandProps) {
     }
   }, [open]);
 
-  const runCommand = (command: () => void) => {
+  const runCommand = (path: string) => {
     onOpenChange(false);
-    command();
+    router.push(path);
   };
 
   return (
@@ -50,25 +50,23 @@ export function SearchCommand({ open, onOpenChange }: SearchCommandProps) {
           <CommandEmpty>No results found.</CommandEmpty>
 
           <CommandGroup heading="Navigation">
-            <CommandItem onSelect={() => runCommand(() => navigate("/docs"))}>
+            <CommandItem onSelect={() => runCommand("/docs")}>
               <BookIcon className="mr-2 h-4 w-4" />
               <span>Docs</span>
             </CommandItem>
-            <CommandItem
-              onSelect={() => runCommand(() => navigate("/examples"))}
-            >
+            <CommandItem onSelect={() => runCommand("/examples")}>
               <FileIcon className="mr-2 h-4 w-4" />
               <span>Examples</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => navigate("/icons"))}>
+            <CommandItem onSelect={() => runCommand("/icons")}>
               <ImageIcon className="mr-2 h-4 w-4" />
               <span>Icons</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => navigate("/themes"))}>
+            <CommandItem onSelect={() => runCommand("/themes")}>
               <PaletteIcon className="mr-2 h-4 w-4" />
               <span>Themes</span>
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => navigate("/blog"))}>
+            <CommandItem onSelect={() => runCommand("/blog")}>
               <NewspaperIcon className="mr-2 h-4 w-4" />
               <span>Blog</span>
             </CommandItem>
@@ -77,21 +75,13 @@ export function SearchCommand({ open, onOpenChange }: SearchCommandProps) {
           <CommandSeparator />
 
           <CommandGroup heading="Documentation">
-            <CommandItem
-              onSelect={() =>
-                runCommand(() => navigate("/docs/getting-started"))
-              }
-            >
+            <CommandItem onSelect={() => runCommand("/docs/getting-started")}>
               <span>Getting Started</span>
             </CommandItem>
-            <CommandItem
-              onSelect={() => runCommand(() => navigate("/docs/components"))}
-            >
+            <CommandItem onSelect={() => runCommand("/docs/components")}>
               <span>Components</span>
             </CommandItem>
-            <CommandItem
-              onSelect={() => runCommand(() => navigate("/docs/api-reference"))}
-            >
+            <CommandItem onSelect={() => runCommand("/docs/api-reference")}>
               <span>API Reference</span>
             </CommandItem>
           </CommandGroup>

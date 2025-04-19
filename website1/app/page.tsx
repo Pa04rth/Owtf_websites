@@ -1,6 +1,7 @@
 import Navbar from "@/app/components/navbar";
 import Masthead from "@/app/components/Masthead";
 import Footer from "@/app/components/Footer";
+import Connection from "@/app/components/Connection";
 
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({
@@ -13,6 +14,7 @@ export default function Home() {
     <div className={` text-white min-h-screen ${montserrat.className}`}>
       <Navbar />
       <Masthead />
+      <Connection />
       <Footer />
     </div>
   );
