@@ -44,6 +44,7 @@ export default function Masthead() {
         <div className="flex items-center justify-center bg-[rgba(255,255,255,0.1)] rounded px-4 py-2 text-white text-xl font-mono h-16 w-145">
           <span>$ git clone https://github.com/owtf/owtf.git</span>
           <button
+            title="Copy to clipboard"
             className="ml-4 bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.3)] px-2 py-1 rounded text-xs"
             onClick={() => {
               navigator.clipboard.writeText(
@@ -52,7 +53,12 @@ export default function Masthead() {
               alert("Copied to clipboard!");
             }}
           >
-            📋
+            <Image
+              src="/assets/copy.png"
+              alt="Copy to Clipboard"
+              width={24} // Matches w-4 (16px)
+              height={24} // Matches h-4 (16px)
+            ></Image>
           </button>
         </div>
 

@@ -8,40 +8,93 @@ const inter = Inter({
   // fallback: ["Arial", "sans-serif"], // Add fallback fonts
 });
 export default function Connection() {
-  const apps = [
-    { name: "Gitter", src: "/assets/Gitter.png" },
-    { name: "Freenode", src: "/assets/Freenode.png" },
-    { name: "Openhub", src: "/assets/Openhub.png" },
-    { name: "Releases", src: "/assets/Releases.png" },
-    { name: "Openhub", src: "/assets/Openhub.png" },
-    { name: "Slack", src: "/assets/slack.png" },
-  ];
-
   return (
-    <div className="bg-zinc-900 text-white py-16 px-6">
+    <div className="bg-black text-white py-16 px-6">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold">Join the Community !</h2>
-        <p className="text-gray-400 mt-4">
-          Thousands of organizations spanning all industries use Electron to
-          build cross-platform software.
+        <h2
+          className={`justify-items-center text-gradient text-white text-4xl font-bold ${inter.className}`}
+        >
+          Join the Community !
+        </h2>
+        <p className="text-gray-400 mt-4 text-xl">
+          Join the community and never miss an update from OWASP@OWTF.
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
-        {apps.map((app) => (
-          <div
-            key={app.name}
-            className="flex flex-col items-center justify-center bg-zinc-800 rounded-lg p-4 hover:shadow-lg transition"
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl min-w-5xl mx-auto justify-center">
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500 ">
+          <a
+            href="https://app.gitter.im/#/room/#owtf_owtf:gitter.im"
+            className="flex items-center space-x-4"
           >
             <Image
-              src={app.src}
-              alt={app.name}
-              width={48}
-              height={48}
-              className="mb-2"
-            />
-            <span className="text-sm font-medium">{app.name}</span>
-          </div>
-        ))}
+              src={"/assets/gitter.png"}
+              alt="Gitter"
+              width={50}
+              height={50}
+            ></Image>
+            <h2 className="text-white text-xl font-bold">Gitter</h2>
+          </a>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500 ">
+          <a
+            href="https://webchat.freenode.net/?channels=owtf"
+            className="flex items-center space-x-4"
+          >
+            <Image
+              src={"/assets/freenode.jpg"}
+              alt="FreeNode"
+              width={50}
+              height={50}
+            ></Image>
+            <h2 className="text-white text-xl font-bold">FreeNode</h2>
+          </a>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500 ">
+          <a
+            href="https://owasp.org/slack/invite"
+            className="flex items-center space-x-4"
+          >
+            <Image
+              src={"/assets/slack.png"}
+              alt="Slack"
+              width={50}
+              height={50}
+            ></Image>
+            <h2 className="text-white text-xl font-bold">Slack</h2>
+          </a>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500 ">
+          <a
+            href="https://www.openhub.net/p/owasp-owtf"
+            className="flex items-center space-x-4"
+          >
+            <Image
+              src={"/assets/openhub.png"}
+              alt="Openhub"
+              width={50}
+              height={50}
+            ></Image>
+            <h2 className="text-white text-xl font-bold">OpenHub</h2>
+          </a>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500 ">
+          <a href="https://x.com/owtfp" className="flex items-center space-x-4">
+            <Image
+              src={"/assets/x.webp"}
+              alt="Twitter"
+              width={50}
+              height={50}
+            ></Image>
+            <h2 className="text-white text-xl font-bold">Twitter</h2>
+          </a>
+        </div>
+      </div>
+      <div className="text-center mt-8">
+        <a href="#">
+          <button className=" bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg h-15 w-80 text-xl">
+            Join Our Mailing List !
+          </button>
+        </a>
       </div>
     </div>
   );
