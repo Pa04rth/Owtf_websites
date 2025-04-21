@@ -17,7 +17,10 @@ export default function Connection() {
           Join the Community !
         </h2>
         <p className="text-gray-400 mt-4 text-xl">
-          Join the community and never miss an update from OWASP@OWTF.
+          Join this vibrant community and never miss an update from OWASP@OWTF.
+          <br />
+          (Over Slack, search for #<u>project-owtf</u> channel)
+          <br />
         </p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl min-w-5xl mx-auto justify-center">
@@ -88,13 +91,6 @@ export default function Connection() {
             <h2 className="text-white text-xl font-bold">Twitter</h2>
           </a>
         </div>
-      </div>
-      <div className="text-center mt-8">
-        <a href="#">
-          <button className=" bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg h-15 w-80 text-xl">
-            Join Our Mailing List !
-          </button>
-        </a>
       </div>
     </div>
   );

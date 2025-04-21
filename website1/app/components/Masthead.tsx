@@ -64,7 +64,7 @@ export default function Masthead() {
 
         {/* Read the Docs Button */}
         <a
-          href="#"
+          href="https://owtf.readthedocs.io/en/develop/"
           className={`flex items-center bg-green-600 hover:bg-green-700 text-white h-16 w-56 px-4 py-2 rounded text-xl font-normal ${inter.className}`}
         >
           📖 Read the docs
