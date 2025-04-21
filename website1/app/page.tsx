@@ -3,8 +3,10 @@ import Masthead from "@/app/components/Masthead";
 import Footer from "@/app/components/Footer";
 import Connection from "@/app/components/Connection";
 import Leaders from "./components/Leaders";
+import Features from "./components/Features";
 
 import { Montserrat } from "next/font/google";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400"],
@@ -15,6 +17,7 @@ export default function Home() {
     <div className={` text-white min-h-screen ${montserrat.className}`}>
       <Navbar />
       <Masthead />
+      <Features />
       <Leaders />
       <Connection />
       <Footer />
