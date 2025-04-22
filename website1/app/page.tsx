@@ -4,6 +4,8 @@ import Footer from "@/app/components/Footer";
 import Connection from "@/app/components/Connection";
 import Leaders from "./components/Leaders";
 import Features from "./components/Features";
+import GetStarted from "./components/GetStarted";
+import GSoC from "./components/GSoC";
 
 import { Montserrat } from "next/font/google";
 
@@ -18,6 +20,8 @@ export default function Home() {
       <Navbar />
       <Masthead />
       <Features />
+      <GetStarted />
+      <GSoC />
       <Leaders />
       <Connection />
       <Footer />

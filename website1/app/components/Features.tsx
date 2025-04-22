@@ -21,15 +21,14 @@ export default function Features() {
             className="mx-auto"
           />
           <h3 className="text-xl font-bold mt-4">Easy to Use -</h3>
-          <p className="text-gray-400 mt-2">
-            <ul className="list-disc pl-5 marker:text-green-500 text-left">
-              <li>
-                Web UI: Now configure and monitor OWTF via a responsive and
-                powerful interface accessible via your browser.
-              </li>
-              <li>Exposes RESTful APIs to all core OWTF capabilties.</li>
-            </ul>
-          </p>
+
+          <ul className="list-disc pl-5 marker:text-green-500 text-gray-400 mt-2 text-left">
+            <li>
+              Web UI: Now configure and monitor OWTF via a responsive and
+              powerful interface accessible via your browser.
+            </li>
+            <li>Exposes RESTful APIs to all core OWTF capabilties.</li>
+          </ul>
         </div>
         {/* Feature 2 */}
         <div className="text-center">
@@ -41,23 +40,22 @@ export default function Features() {
             className="mx-auto"
           />
           <h3 className="text-xl font-bold mt-4">Unites popular tools -</h3>
-          <p className="text-gray-400 mt-2">
-            <ul className="list-disc pl-5 marker:text-green-500 text-left">
-              <li>
-                Instead of implementing yet another spider (a hard job), OWTF
-                will scrub the output of all tools/plugins run to gather as many
-                URLs as possible.
-              </li>
-              <li>
-                Scan by various aggression levels: OWTF supports scans which are
-                based on the aggressiveness of the plugins/tools invoked.
-              </li>
-              <li>
-                Extensible OWTF manages tools through 'plugins' making it
-                trivial to add new tools.
-              </li>
-            </ul>
-          </p>
+
+          <ul className="list-disc pl-5 text-gray-400 mt-2 marker:text-green-500 text-left">
+            <li>
+              Instead of implementing yet another spider (a hard job), OWTF will
+              scrub the output of all tools/plugins run to gather as many URLs
+              as possible.
+            </li>
+            <li>
+              Scan by various aggression levels: OWTF supports scans which are
+              based on the aggressiveness of the plugins/tools invoked.
+            </li>
+            <li>
+              Extensible OWTF manages tools through 'plugins' making it trivial
+              to add new tools.
+            </li>
+          </ul>
         </div>
         {/* Feature 3 */}
         <div className="text-center">
@@ -69,15 +67,13 @@ export default function Features() {
             className="mx-auto"
           />
           <h3 className="text-xl font-bold mt-4">Use OWTF anywhere -</h3>
-          <p className="text-gray-400 mt-2">
-            <ul className="list-disc pl-5 marker:text-green-500 text-left">
-              <li>
-                OWTF provides a Dockerfile to run on any platform Docker
-                supports!
-              </li>
-              <li>A new Docker Compose version coming soon...</li>
-            </ul>
-          </p>
+
+          <ul className="list-disc pl-5 text-gray-400 mt-2 marker:text-green-500 text-left">
+            <li>
+              OWTF provides a Dockerfile to run on any platform Docker supports!
+            </li>
+            <li>A new Docker Compose version coming soon...</li>
+          </ul>
         </div>
       </div>
     </div>

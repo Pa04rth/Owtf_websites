@@ -5,33 +5,36 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "900"],
-  // fallback: ["Arial", "sans-serif"], // Add fallback fonts
 });
+
 export default function Leaders() {
   return (
-    <div className="bg-black text-white py-16 px-6">
-      <div className="text-center mb-12">
+    <div className="bg-black text-white py-2 px-4 md:px-6">
+      {/* Header Section */}
+      <div className="text-center mb-8 md:mb-12">
         <h2
-          className={`justify-items-center text-gradient text-white text-4xl font-bold ${inter.className}`}
+          className={`text-white text-3xl md:text-4xl font-bold ${inter.className}`}
         >
-          Meet the Leaders !
+          Meet the Leaders!
         </h2>
-        <p className="text-gray-400 mt-4 text-xl">
+        <p className="text-gray-400 mt-4 text-base md:text-xl">
           Meet the leaders of OWASP@OWTF and learn more about their
           contributions.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+      {/* Leaders Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
         {/* Card 1 */}
-        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500">
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-4 md:p-6 shadow-md border-2 border-zinc-500">
           <Image
             src="/assets/leader1.jpg"
             alt="Abraham Aranguran (7A)"
-            width={400}
-            height={400}
-            className="rounded-t-2xl"
+            width={300}
+            height={300}
+            className="rounded-t-2xl w-full h-auto"
           />
-          <h2 className="text-white text-xl font-bold mt-4 text-center">
+          <h2 className="text-white text-lg md:text-xl font-bold mt-4 text-center">
             Abraham Aranguran
           </h2>
           <div className="flex justify-around mt-4">
@@ -43,8 +46,8 @@ export default function Leaders() {
               <Image
                 src="/assets/linkedin.png"
                 alt="LinkedIn"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -56,8 +59,8 @@ export default function Leaders() {
               <Image
                 src="/assets/x.webp"
                 alt="Twitter"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -69,8 +72,8 @@ export default function Leaders() {
               <Image
                 src="/assets/github.webp"
                 alt="GitHub"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -81,24 +84,25 @@ export default function Leaders() {
             >
               <Image
                 src="/assets/mail.png"
-                alt="GitHub"
-                width={50}
-                height={50}
+                alt="Email"
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
           </div>
         </div>
+
         {/* Card 2 */}
-        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-6 shadow-md border-2 border-zinc-500">
+        <div className="bg-[rgba(255,255,255,0.1)] rounded-2xl p-4 md:p-6 shadow-md border-2 border-zinc-500">
           <Image
             src="/assets/leader2.jpg"
-            alt="Leader 2"
-            width={400}
-            height={400}
-            className="rounded-t-2xl"
+            alt="Viyat Bhalodia"
+            width={300}
+            height={300}
+            className="rounded-t-2xl w-full h-auto"
           />
-          <h2 className="text-white text-xl font-bold mt-4 text-center">
+          <h2 className="text-white text-lg md:text-xl font-bold mt-4 text-center">
             Viyat Bhalodia
           </h2>
           <div className="flex justify-around mt-4">
@@ -110,8 +114,8 @@ export default function Leaders() {
               <Image
                 src="/assets/linkedin.png"
                 alt="LinkedIn"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -123,8 +127,8 @@ export default function Leaders() {
               <Image
                 src="/assets/x.webp"
                 alt="Twitter"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -136,8 +140,8 @@ export default function Leaders() {
               <Image
                 src="/assets/github.webp"
                 alt="GitHub"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
@@ -148,9 +152,9 @@ export default function Leaders() {
             >
               <Image
                 src="/assets/mail.png"
-                alt="GitHub"
-                width={50}
-                height={50}
+                alt="Email"
+                width={40}
+                height={40}
                 className="hover:opacity-80"
               />
             </a>
