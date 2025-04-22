@@ -10,18 +10,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu";
-// import { Kbd } from "@/app/components/ui/kbd";
+import { Kbd } from "@/app/components/ui/kbd";
 import { SearchCommand } from "@/app/components/search-command";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-    document.documentElement.classList.toggle("dark");
-  };
 
   // Listen for keyboard shortcut Cmd+K / Ctrl+K
   useEffect(() => {
@@ -168,27 +162,33 @@ export default function Navbar() {
               <span className="text-sm mr-1">v 2.6</span>
               <ChevronDown size={14} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40">
-              <DropdownMenuItem className="text-sm">
+            <DropdownMenuContent className="w-40 text-white bg-[#111111] shadow-md ">
+              <DropdownMenuItem className="text-sm hover:bg-[rgba(255,255,255,0.2)]">
                 v 2.6 (current)
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">v 2.5</DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">v 2.4</DropdownMenuItem>
-              <DropdownMenuItem className="text-sm">Bugsquash</DropdownMenuItem>
+              <a href="https://github.com/owtf/owtf/releases/tag/v2.5.0">
+                <DropdownMenuItem className="text-sm hover:bg-[rgba(255,255,255,0.2)]">
+                  v 2.5
+                </DropdownMenuItem>
+              </a>
+              <a href="https://github.com/owtf/owtf/releases/tag/v2.4">
+                <DropdownMenuItem className="text-sm hover:bg-[rgba(255,255,255,0.2)]">
+                  v 2.4
+                </DropdownMenuItem>
+              </a>
+              <a href="https://github.com/owtf/owtf/releases/tag/v2.3">
+                <DropdownMenuItem className="text-sm hover:bg-[rgba(255,255,255,0.2)]">
+                  Bugsquash
+                </DropdownMenuItem>
+              </a>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-sm">
-                All versions
-              </DropdownMenuItem>
+              <a href="https://github.com/owtf/owtf/releases">
+                <DropdownMenuItem className="text-sm hover:bg-[rgba(255,255,255,0.2)]">
+                  All versions
+                </DropdownMenuItem>
+              </a>
             </DropdownMenuContent>
           </DropdownMenu>
-
-          {/* Theme Toggle Button */}
-          <button
-            className="hover:bg-[rgba(255,255,255,0.2)] p-1.5 rounded-full"
-            onClick={toggleTheme}
-          >
-            {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-          </button>
         </div>
       </nav>
 
