@@ -5,34 +5,34 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "900"],
-  // fallback: ["Arial", "sans-serif"], // Add fallback fonts
 });
+
 export default function Footer() {
   return (
     <div
       className={`bg-zinc-900 text-gray-400 py-8 px-6 ${inter.className} font-normal`}
     >
-      <footer className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mt-20">
+      <footer className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 mt-20">
         {/* Branding Section */}
         <div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-start  space-x-2">
             <Image
               src="/assets/logo.png"
               alt="Logo"
-              width={40} // Specify the width
-              height={40} // Specify the height
+              width={40}
+              height={40}
               className="rounded-full"
             />
             <span className="text-lg font-semibold">OWASP@OWTF</span>
           </div>
-          <p className="mt-4 font-normal">
+          <p className="mt-4 font-normal text-sm md:text-base">
             Designed and built by OWTF Team and Leaders. Website built by{" "}
             <a href="https://github.com/Pa04rth" className="text-blue-300">
               Parth
             </a>{" "}
             (contributor).
           </p>
-          <p className="mt-2">
+          <p className="mt-2 text-sm md:text-base">
             Code licensed{" "}
             <a
               className="text-blue-300"
@@ -41,13 +41,13 @@ export default function Footer() {
               License
             </a>
           </p>
-          <p className="mt-2">Currently v2.6</p>
+          <p className="mt-2 text-sm md:text-base">Currently v2.6</p>
         </div>
 
         {/* Links Section */}
-        <div className="ml-30">
+        <div>
           <h3 className="text-white text-lg font-semibold mb-2">Links</h3>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-sm md:text-base">
             <li>Home</li>
             <li>Docs</li>
             <li>Examples</li>
@@ -59,9 +59,9 @@ export default function Footer() {
         </div>
 
         {/* Guides Section */}
-        <div className="ml-10">
+        <div>
           <h3 className="text-white text-lg font-semibold mb-2">Guides</h3>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-sm md:text-base">
             <li>Getting started</li>
             <li>Starter template</li>
             <li>Webpack</li>
@@ -73,7 +73,7 @@ export default function Footer() {
         {/* Projects Section */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-2">Projects</h3>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-sm md:text-base">
             <li>Bootstrap 5</li>
             <li>Bootstrap 4</li>
             <li>Icons</li>
@@ -85,7 +85,7 @@ export default function Footer() {
         {/* Community Section */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-2">Community</h3>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-sm md:text-base">
             <li>Issues</li>
             <li>Discussions</li>
             <li>Corporate sponsors</li>
@@ -99,7 +99,7 @@ export default function Footer() {
       <div className="mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Spotlight Section */}
-          <div className="ml-20">
+          <div className=" md:ml-20">
             <h3 className="text-white text-lg font-semibold mb-4">
               Spotlight: Backslash
             </h3>
@@ -110,7 +110,7 @@ export default function Footer() {
               height={50}
               className="mb-4"
             />
-            <p className="text-sm">
+            <p className="text-sm md:text-base">
               Backslash is the first Cloud-Native Application Security solution
               for enterprise AppSec teams to provide unified security and
               business context to cloud-native code risk, coupled with automated
@@ -163,20 +163,20 @@ export default function Footer() {
               />
               <Image
                 src="/assets/fortify.png"
-                alt="Supporter 6"
+                alt="Supporter 7"
                 width={100}
                 height={50}
                 className="mt-10"
               />
               <Image
                 src="/assets/InfoSecMap.png"
-                alt="Supporter 6"
+                alt="Supporter 8"
                 width={100}
                 height={50}
               />
               <Image
                 src="/assets/Raxis.png"
-                alt="Supporter 6"
+                alt="Supporter 9"
                 width={100}
                 height={50}
                 className="mt-10"
@@ -186,8 +186,8 @@ export default function Footer() {
         </div>
 
         {/* Footer Links */}
-        <div className="mt-8 flex justify-between text-sm ml-20">
-          <div className="flex space-x-4">
+        <div className="mt-8 flex flex-col md:flex-row justify-between text-sm md:text-base">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
             <a href="#" className="hover:underline">
               Privacy
             </a>
@@ -198,7 +198,7 @@ export default function Footer() {
               Contact
             </a>
           </div>
-          <p className="text-gray-500">
+          <p className="text-gray-500 mt-4 md:mt-0">
             Copyright 2025, OWASP Foundation, Inc.
           </p>
         </div>

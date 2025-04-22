@@ -9,9 +9,9 @@ const inter = Inter({
 
 export default function Leaders() {
   return (
-    <div className="bg-black text-white py-2 px-4 md:px-6">
+    <div className="bg-black text-white py-2 px-4 md:px-6  ">
       {/* Header Section */}
-      <div className="text-center mb-8 md:mb-12">
+      <div className="text-center mb-8 md:mb-12 mt-40">
         <h2
           className={`text-white text-3xl md:text-4xl font-bold ${inter.className}`}
         >

@@ -41,9 +41,9 @@ export default function GetStarted() {
       </a>
 
       {/* Additional Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 text-left">
+      <div className="grid grid-cols-1 md:grid-cols-2  mt-5 text-left">
         {/* Install via Package Manager */}
-        <div className="bg-black p-6 rounded-lg">
+        <div className="bg-black p-6   border-r-1 border-white border-opacity-3">
           <div className="flex items-center mb-4">
             <Image
               src="/assets/Kali.png"
